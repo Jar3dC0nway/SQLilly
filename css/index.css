@@ -1,0 +1,199 @@
+﻿:root {
+    --black: #1a1a1b;
+    --gray: #d1dada;
+    --white: #eeeaee;
+    --textbox: #d1ced1;
+    --bounds: min(600px, 100%);
+    --snow: url('../image/snow.png');
+    --grayT: rgba(110, 120, 120, 0.25);
+}
+
+textarea {
+    /* iOS Safari */
+    -webkit-touch-callout: auto;
+    /* Safari */
+    -webkit-user-select: auto;
+    /* Konqueror HTML */
+    -khtml-user-select: auto;
+    /* Firefox */
+    -moz-user-select: auto;
+    /* Internet Explorer/Edge */
+    -ms-user-select: auto;
+    /* Non-prefixed version, currently supported by Chrome and Opera */
+    user-select: auto;
+}
+
+body {
+    margin: 0;
+    background-color: var(--white);
+    background-image: var(--snow);
+    background-size: 20px;
+    color: var(--white);
+    font-family: 'Courier New', monospace;
+}
+
+.back {
+    margin: auto;
+    width: var(--bounds);
+    height: 100vh;
+    background-image: var(--snow);
+    background-size: 40px;
+    box-shadow: 0px 0px 5px var(--black);
+}
+.overlay {
+    margin-bottom: -100vh;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 60, 60, 0.5);
+    /*background-color: rgba(209, 218, 218, 0.25);*/
+}
+
+.column {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+}
+    .column * {
+        text-shadow: 1px 1px 2px var(--black);
+    }
+    .column h1 {
+        font-size: 50px;
+        transition: 0.1s;
+    }
+        .column h1:hover {
+            letter-spacing: 0.1em;
+            text-shadow: 2px 2px 5px var(--black);
+        }
+    .column h2 {
+        font-size: 20px;
+        text-align: right;
+    }
+.card {
+    border-radius: 35px;
+    background-color: var(--white);
+    background-image: var(--snow);
+    background-size: 40px;
+    height: 540px;
+    margin: auto;
+    padding-top: 10px;
+    width: 90%;
+    box-shadow: 1px 1px 3px var(--black);
+}
+    .card * {
+        width: 90%;
+        border-radius: 10px;
+        margin: auto;
+        margin-top: 10px;
+        padding: 10px;
+        color: var(--black);
+        font-size: 25px;
+    }
+.question {
+    position: relative;
+    height: 80px;
+    box-shadow: 1px 1px 2px var(--black);
+    background-image: var(--snow);
+    background-size: 40px;
+}
+    .question * {
+        filter: blur(0px);
+        margin-top: -5px;
+        background-color: transparent;
+        font-size: 20px;
+        height: 80%;
+    }
+.answer {
+    position: relative;
+    height: 240px;
+    box-shadow: 1px 1px 2px var(--black);
+    background-image: var(--snow);
+    background-size: 40px;
+}
+    .answer * {
+        filter: blur(0px);
+        background-color: transparent;
+        transition: 0.2s;
+    }
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+    .buttons button {
+        position: relative;
+        width: 40%;
+        margin: auto;
+        margin-bottom: -10px;
+        font-family: 'Courier New', monospace;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 1px 1px 2px var(--black);
+        transition: 0.1s;
+        background-image: var(--snow);
+        background-size: 40px;
+    }
+        .buttons button:hover {
+            letter-spacing: 0.1em;
+        }
+        .buttons button:active {
+            letter-spacing: -0.1em;
+            margin-top:5px;
+            margin-bottom:-15px;
+        }
+        .boxoverlay {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: var(--grayT);
+            pointer-events: none;
+        }
+@keyframes blink {
+    from {
+        color: var(--white);
+    }
+    to {
+        color: var(--black);
+    }
+}
+.footer {
+    display: flex;
+    z-index: 10;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: -150px;
+    padding: 10px;
+    width: calc(var(--bounds) - 20px);
+    height: 130px;
+    background-color: var(--black);
+}
+    .footer .blinker {
+        animation: blink infinite 1.5s;
+    }
+#qst {
+}
+#ans {
+    width: calc(var(--bounds) - 20px);
+    height: 200px;
+    resize: none;
+}
+#schema {
+    position: relative;
+    height: 250px;
+    margin-top: -400px;
+    box-shadow: 2px 2px 5px var(--black);
+    background-image: var(--snow);
+    background-size: 40px;
+    transition: 0.1s;
+    filter: opacity(0);
+    pointer-events: none;
+}
+    #schema * {
+        padding: 10px;
+    }
